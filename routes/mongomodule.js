@@ -26,17 +26,18 @@ var sys = require('sys');
 
 var currentVoiceBinary;
 
-var mongoCollectionName = 'voicedemo';
-// Retrieve
-var MongoClient = require('mongodb').MongoClient; 
 
+// Retrieve mongodb
+var MongoClient = require('mongodb').MongoClient; 
+var MongoDbName = "mongodb://localhost:27017/testdb";
+var mongoCollectionName = 'voicedemo';
 
 var router_mongo =express.Router () ;
 
 //add one new item to mongodb collection
 router_mongo.post('/addItemToMongodb', function (req, res) {
 
-	MongoClient.connect("mongodb://localhost:27017/testdb", function(err, db) {
+	MongoClient.connect(MongoDbName, function(err, db) {
 	  if(!err) {
 	  
 		console.log(new Date().toISOString() +　"MongoDB are connected");
@@ -70,7 +71,7 @@ router_mongo.post('/addItemToMongodb', function (req, res) {
 
 router_mongo.post('/addItemsToMongodb', function (req, res) {
 
-	MongoClient.connect("mongodb://localhost:27017/testdb", function(err, db) {
+	MongoClient.connect(MongoDbName, function(err, db) {
 	  if(!err) {	   
 		console.log(new Date().toISOString() +　"MongoDB are connected");
 		var collection = db.collection(mongoCollectionName);  
@@ -96,7 +97,7 @@ router_mongo.post('/addItemsToMongodb', function (req, res) {
 //get all items of these mongodb
 router_mongo.get('/getItemsFromMongodb', function (req, res) {
   
-  MongoClient.connect("mongodb://localhost:27017/testdb", function(err, db) {
+  MongoClient.connect(MongoDbName, function(err, db) {
   
 	  if(!err) {		
 		console.log(new Date().toISOString() +　"MongoDB are connected");
