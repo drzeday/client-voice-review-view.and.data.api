@@ -1,0 +1,146 @@
+<!--/////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) Autodesk, Inc. All rights reserved
+// Written by Philippe Leefsma 2014 - ADN/Developer Technical Services
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appears in all copies and
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS.
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC.
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+////////////////////////////////////////////////////////////////////////////////-->
+<html>
+<head>
+    <title>ADN Voice Review on Viewer Demo</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <!-- jquery -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jqm-demos.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Viewer staging -->
+    <!--link type="text/css" rel="stylesheet" href="https://developer-stg.api.autodesk.com/viewingservice/v1/viewers/style.css"/>
+    <script src="https://developer-stg.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script -->
+
+    <!-- Viewer production -->
+    <link type="text/css" rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.css"/>
+    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script>
+
+    <!-- Autodesk.ADN.Toolkit.Viewer -->
+    <script src="https://rawgit.com/Developer-Autodesk/library-javascript-view.and.data.api/master/js/Autodesk.ADN.Toolkit.Viewer.js"></script>	
+	
+	<!-- js for loading functions of voice recording -->	
+	<script src="/js/Recorderjs/recorder.js"></script>
+	
+	<!-- main js for this demo -->	
+    <script src="/viewer.js"></script>
+	
+<style>
+	html { overflow: hidden; }
+	body { 
+		font: 14pt Arial, sans-serif; 
+		background: lightgrey;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		width: 100%;
+		margin: 0 0;
+	}
+	canvas { 
+		display: inline-block; 
+		background: #202020; 
+		width: 95%;
+		height: 45%;
+		box-shadow: 0px 0px 10px blue;
+	}
+	#controls {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		height: 20%;
+		width: 100%;
+	}
+	.list-view {    
+            height: 600;    
+            top: 50; 
+            overflow: auto;   
+            -webkit-overflow-scrolling:touch;   
+           }
+	#record { height: 15vh; }
+	#record.recording { 
+		background: red;
+		background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+		background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+		background: radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+	}
+	#save, #save img { height: 10vh; }
+	#save { opacity: 0.25;}
+	#save[download] { opacity: 1;}
+	#viz {
+		height: 80%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	@media (orientation: landscape) {
+		body { flex-direction: row;}
+		#controls { flex-direction: column; height: 100%; width: 10%;}
+		#viz { height: 100%; width: 90%;}
+	}
+
+</style>
+	
+
+</head>
+
+<body > 
+	 
+ <div data-role="page" class="jqm-demos" data-quicklinks="true">
+ 
+    <div data-role="header" data-theme="f">
+		<h1>Voice Review</h1>
+		<a href="#left-panel" data-icon="carat-r" data-iconpos="notext" data-shadow="true" data-iconshadow="true" class="ui-nodisc-icon">Open left panel</a>
+		<a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="true" data-iconshadow="true" class="ui-nodisc-icon">Open right panel</a>
+	</div><!-- /header -->
+	
+	<div role="main" class="ui-content"  >	 			 
+		 <div id="viewerDiv"></div>		 
+		 </div>   
+		 
+		 <div data-role="panel" id="left-panel" data-position="left" data-display="overlay" data-theme="a">
+			<h3>Review List</h3>
+			 <div data-demo-html="true" data-inset="true">
+					<ul id="reviewList" data-role="listview" class="list-view" data-inset="true"> 
+					</ul> 
+				</div><!--/demo-html --> 
+			  <ul id="recordingslist"></ul> 			   
+		</div><!-- /left panel -->
+	
+		<div data-role="panel" id="right-panel" data-position="right" data-display="overlay" data-theme="a">
+		
+			 <img id="useremailimg" src="images/adsk.png" width="100" height="100">
+			 <p></p>
+			 <label id='useremail'></label>
+			 <p></p>					 
+			 <hr />
+			 <img id="record" src="images/mic128.png"  title="Add Review" onclick="toggleRecording(this);" width="100" height="100"> 
+			 <p></p>
+			 <span id="timer"></span>
+			 <p></p>
+			 <img id="sysdb" src="images/syncdb.png"  title="Add Review" onclick="toggleSyncDB(this);" width="100" height="100">  
+			 <p></p> 
+		</div><!-- /right panel --> 		  
+</div>	 
+
+</body>
+</html>
