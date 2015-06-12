@@ -4,6 +4,8 @@ This sample is a scenario that the user can review the model with voice. It uses
 ## Description
 This sample demonstrates a scenario that the user can review a model by voice in a web application with the Autodesk View & Data API. This web application implements a basic Node.js server and JavaScript/HTML5 client. It does not demonstrate how to upload a model to the Autodesk server for translation. See instructions below on how to prepare a model to be consumed in this sample.
 
+Please refer to the video [client-voice-review-demo.mp4](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/client-voice-review-demo.mp4) for a demo of the detailed workflow. 
+
 
 ## Dependencies
 Install Node.js on your machine and clone this repo. Download the project dependencies using npm before launching the app by running 
@@ -53,7 +55,7 @@ It depends on other workflow samples to upload models and retrieve the model URN
   var defaultUrn = '<replace with your encoded urn>';
   ```
   
-* Replace the db name and collection name with yours in mongomodule.js, line #32 and #33 <br />
+* Replace the db name and collection name with yours in routes/mongomodule.js, line #32 and #33 <br />
   var MongoDbName = "mongodb://localhost:27017/testdb";
   var mongoCollectionName = 'voicedemo';
 
