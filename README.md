@@ -20,14 +20,13 @@ This will install the following node.js modules in the project:
 - mongodb
 - multipart
 - bson
-
 * Install [MongoDB](http://www.mongodb.org/) on your machine. Assume MongoDB 3.0 has been installed at C:\Program Files\MongoDB\.
 - Create a database folder C:\Program Files\MongoDB\testdb. 
 - Open command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. In default, the port for MongoDB is 27017. <br/>
   ```
   mongod --dbpath="C:\Program Files\MongoDB\testdb"
   ```
-  ![alt tag](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/help/start-mongo.png)
+ ![alt tag](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/help/start-mongo.png)
   
 - Open one more command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. MongoDB context will start. <br/>
   ```
@@ -45,7 +44,7 @@ This will install the following node.js modules in the project:
   ```
   this will create a collection (table) in the database.
   
-   ![alt tag](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/help/create-database-collection.png)
+ ![alt tag](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/help/create-database-collection.png)
    
 * As said, this sample does not include the workflow of uploading models to the server.
 It depends on other workflow samples to upload models and retrieve the model URNs, as explained in the Setup/Usage Instructions.
