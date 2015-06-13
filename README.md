@@ -13,23 +13,23 @@ Please refer to the video [client-voice-review-demo.mp4](https://github.com/Deve
 npm install
 ```
 This will install the following node.js modules in the project:
-	- express
-	- request
-	- serve-favicon
-	- body-parser
-	- mongodb
-	- multipart
-	- bson
+- express
+- request
+- serve-favicon
+- body-parser
+- mongodb
+- multipart
+- bson
 
 * Install [MongoDB](http://www.mongodb.org/) on your machine. Assume MongoDB 3.0 has been installed at C:\Program Files\MongoDB\.
 - Create a database folder C:\Program Files\MongoDB\testdb. 
-- Open command prompt window with administrater prevelidge. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. In default, the port for MongoDB is 27017. <br/>
+- Open command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. In default, the port for MongoDB is 27017. <br/>
   ```
   mongod --dbpath="C:\Program Files\MongoDB\testdb"
   ```
   ![alt tag](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/help/start-mongo.png)
   
-- Open one more command prompt window with administrater prevelidge. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. MongoDB context will start. <br/>
+- Open one more command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. MongoDB context will start. <br/>
   ```
   mongo
   ```
@@ -58,10 +58,10 @@ Currently this sample has been tested on Windows OS with Autodesk production ser
 * Apply for your own credentials (API keys) from [developer.autodesk.com](http://developer.autodesk.com)
 * From the sample root folder, rename or copy the ./credentials_.js file into ./credentials.js <br />
   * Windows  
-    ```
-    copy credentials_.js credentials.js 
+  ```
+  copy credentials_.js credentials.js 
   
-   ```
+  ```
 * Replace the placeholders with your own keys in credentials.js, line #23 and #24 <br />
   ```
   client_id: process.env.CONSUMERKEY || '<replace with your consumer key>';
@@ -70,7 +70,7 @@ Currently this sample has been tested on Windows OS with Autodesk production ser
   ```
 * Upload one of your models to your account and get its URN using another workflow sample, for example:
   - Windows: [.NET WPF application workflow sample](https://github.com/Developer-Autodesk/workflow-wpf-view.and.data.api) 
-   - Browser: [models.autodesk.io web page](http://models.autodesk.io) or [javalmvwalkthrough web page](http://javalmvwalkthrough-vq2mmximxb.elasticbeanstalk.com)
+   - Browser: [models.autodesk.io web page](http://models.autodesk.io) or [java lmv walk through web page](http://javalmvwalkthrough-vq2mmximxb.elasticbeanstalk.com)
 * Copy the URN which was generated in the previous step in file /www/viewer.js at line #19 <br />
   ```
   var defaultUrn = '<replace with your encoded urn>';
@@ -101,7 +101,7 @@ Currently this sample has been tested on Windows OS with Autodesk production ser
   ```
   node server.js
   ```
-* Connect to you local server using a WebGL-compatible browser: [http://localhost:3001/](http://localhost:3001/)
+* Connect to your local server using a WebGL-compatible browser: [http://localhost:3001/](http://localhost:3001/)
 
 
 ## Options
@@ -115,4 +115,4 @@ That samples are licensed under the terms of the [MIT License](http://opensource
 
 ## Written by 
 
-Written by [Xiaodong Liang](http://adndevblog.typepad.com/aec/xiaodong-liang.html), Autodesk Developer Network.
+Written by [Xiaodong Liang](http://adndevblog.typepad.com/aec/xiaodong-liang.html), Autodesk Developer Network.  
