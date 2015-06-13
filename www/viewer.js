@@ -34,6 +34,7 @@ var _viewer;
 //----------------utilities-----------------------------
 //user images map
 var userMap = {
+	'xiaodong.liang@autodesk.com':'xiaodong.png',
 	'user1@xxx.com':'user1.png',
 	'user2@xxx.com':'user2.png' 
 };
