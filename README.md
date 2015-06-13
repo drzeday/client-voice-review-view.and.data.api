@@ -13,32 +13,32 @@ Please refer to the video [client-voice-review-demo.mp4](https://github.com/Deve
 npm install
 ```
 This will install the following node.js modules in the project:
-- express
-- request
-- serve-favicon
-- body-parser
-- mongodb
-- multipart
-- bson
+	* express
+	* request
+	* serve-favicon
+	* body-parser
+	* mongodb
+	* multipart
+	* bson
 * Install [MongoDB](http://www.mongodb.org/) on your machine. Assume MongoDB 3.0 has been installed at C:\Program Files\MongoDB\.
-- Create a database folder C:\Program Files\MongoDB\testdb. 
-- Open command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. In default, the port for MongoDB is 27017. <br/>
+	* Create a database folder C:\Program Files\MongoDB\testdb. 
+	* Open command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. In default, the port for MongoDB is 27017. <br/>
   ```
   mongod --dbpath="C:\Program Files\MongoDB\testdb"
   ```
  ![alt tag](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/help/start-mongo.png)
   
-- Open one more command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. MongoDB context will start. <br/>
+	* Open one more command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. MongoDB context will start. <br/>
   ```
   mongo
   ```
-- In MongoDB context, type <br/>
+	* In MongoDB context, type <br/>
   ```
   use testdb
   ```
   this will create a new database named 'testdb'
   
-- type
+	* type
   ```
   db.createCollection('voicedemo')
   ```
