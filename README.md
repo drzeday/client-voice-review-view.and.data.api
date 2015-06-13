@@ -44,7 +44,7 @@ This will install the following node.js modules in the project:
   ```
   db.createCollection('voicedemo')
   ```
-  this will create a collection (table) in the database.
+  this will create a collection (table) named 'voicedemo' in the database.
   
  ![alt tag](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/help/create-database-collection.png)
    
