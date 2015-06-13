@@ -13,6 +13,7 @@ Please refer to the video [client-voice-review-demo.mp4](https://github.com/Deve
 npm install
 ```
 This will install the following node.js modules in the project:
+
 	* express
 	* request
 	* serve-favicon
@@ -20,6 +21,7 @@ This will install the following node.js modules in the project:
 	* mongodb
 	* multipart
 	* bson
+
 * Install [MongoDB](http://www.mongodb.org/) on your machine. Assume MongoDB 3.0 has been installed at C:\Program Files\MongoDB\.
 	* Create a database folder C:\Program Files\MongoDB\testdb. 
 	* Open command prompt window with administrator privilege. Switch to the directory C:\Program Files\MongoDB\Server\3.0\bin. Run the command as below. In default, the port for MongoDB is 27017. <br/>
