@@ -8,6 +8,8 @@ Please refer to the video [client-voice-review-demo.mp4](https://github.com/Deve
 
 
 ## Dependencies
+* The Javascript library of voice recording is from [cwilso/AudioRecorder](https://github.com/cwilso/AudioRecorder). A copy is enclosed in this repository at /www/js/Recorderjs. 
+
 * Install [Node.js](https://nodejs.org/) on your machine and clone this repo. Download the project dependencies using npm before launching the app by running the following command in the project root directory:
 ```
 npm install
