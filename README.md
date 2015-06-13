@@ -14,13 +14,13 @@ npm install
 ```
 This will install the following node.js modules in the project:
 
-	* express
-	* request
-	* serve-favicon
-	* body-parser
-	* mongodb
-	* multipart
-	* bson
+	express
+	request
+	serve-favicon
+	body-parser
+	mongodb
+	multipart
+	bson
 
 * Install [MongoDB](http://www.mongodb.org/) on your machine. Assume MongoDB 3.0 has been installed at C:\Program Files\MongoDB\.
 	* Create a database folder C:\Program Files\MongoDB\testdb. 
