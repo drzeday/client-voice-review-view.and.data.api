@@ -4,7 +4,7 @@ This sample is a scenario that the user can review the model with voice. It uses
 ## Description
 This sample demonstrates a scenario that the user can review a model by voice in a web application with the Autodesk View & Data API. This web application implements a basic Node.js server and JavaScript/HTML5 client. It does not demonstrate how to upload a model to the Autodesk server for translation. See instructions below on how to prepare a model to be consumed in this sample.
 
-Please refer to the video [client-voice-review-demo.mp4](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/client-voice-review-demo.mp4) for a demo that runs in localhost. 
+Please refer to the video [client-voice-review-demo.mp4](https://github.com/Developer-Autodesk/client-voice-review-view.and.data.api/blob/master/client-voice-review-demo.mp4) for a demo. 
 
 
 ## Dependencies
@@ -13,13 +13,13 @@ Please refer to the video [client-voice-review-demo.mp4](https://github.com/Deve
 npm install
 ```
 This will install the following node.js modules in the project:
-- express
-- request
-- serve-favicon
-- body-parser
-- mongodb
-- multipart
-- bson
+	- express
+	- request
+	- serve-favicon
+	- body-parser
+	- mongodb
+	- multipart
+	- bson
 
 * Install [MongoDB](http://www.mongodb.org/) on your machine. Assume MongoDB 3.0 has been installed at C:\Program Files\MongoDB\.
 - Create a database folder C:\Program Files\MongoDB\testdb. 
@@ -57,7 +57,7 @@ Currently this sample has been tested on Windows OS with Autodesk production ser
 
 * Apply for your own credentials (API keys) from [developer.autodesk.com](http://developer.autodesk.com)
 * From the sample root folder, rename or copy the ./credentials_.js file into ./credentials.js <br />
-  * Windows <br />
+  * Windows  
     ```
     copy credentials_.js credentials.js 
   
