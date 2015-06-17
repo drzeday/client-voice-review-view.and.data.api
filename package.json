@@ -6,7 +6,10 @@
     "body-parser": "^1.12.4",
     "express": ">= 4.12.3",
     "request": ">= 2.55.0",
-    "serve-favicon": ">= 2.2.0"
+    "serve-favicon": ">= 2.2.0",
+    "bson":"*",
+    "multipart": "*",
+    "mongodb": "*"
   },
   "files": [
     "LICENSE",
