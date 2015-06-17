@@ -67,9 +67,9 @@ Currently this sample has been tested on Windows OS with Autodesk production ser
   ```
 * Replace the placeholders with your own keys in credentials.js, line #23 and #24 <br />
   ```
-  client_id: process.env.CONSUMERKEY || '<replace with your consumer key>';
+  client_id: process.env.CONSUMERKEY || '<replace with your consumer key>',
   
-  client_secret: process.env.CONSUMERSECRET || '<replace with your consumer secret>';
+  client_secret: process.env.CONSUMERSECRET || '<replace with your consumer secret>',
   ```
 * Upload one of your models to your account and get its URN using another workflow sample, for example:
   - Windows: [.NET WPF application workflow sample](https://github.com/Developer-Autodesk/workflow-wpf-view.and.data.api) 
